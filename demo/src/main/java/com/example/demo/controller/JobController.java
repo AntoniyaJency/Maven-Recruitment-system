@@ -1,0 +1,28 @@
+package com.example.demo.controller;
+
+import com.example.demo.model.Job;
+import com.example.demo.service.JobService;
+import org.springframework.web.bind.annotation.*;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/jobs")
+@CrossOrigin(origins = "*")
+public class JobController {
+
+    private final JobService jobService;
+
+    public JobController(JobService jobService) {
+        this.jobService = jobService;
+    }
+
+    @GetMapping
+    public List<Job> getAllJobs() {
+        return jobService.getAllJobs();
+    }
+
+    @GetMapping("/{id}")
+    public Job getJob(@PathVariable int id) {
+        return jobService.getJobById(id);
+    }
+}
