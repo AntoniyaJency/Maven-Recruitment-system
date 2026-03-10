@@ -21,6 +21,8 @@ public class CandidateController {
         return candidateService.getAllCandidates();
     }
 
+    //this is comment
+
     @PostMapping
     public void addCandidate(@RequestBody Candidate candidate) {
         candidateService.addCandidate(candidate);
