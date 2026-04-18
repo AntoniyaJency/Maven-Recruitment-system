@@ -5,6 +5,7 @@ pool:
   name: Devops_Agent
 
 steps:
+- checkout: self
 - task: Maven@4
   inputs:
     mavenPomFile: 'demo/pom.xml'
