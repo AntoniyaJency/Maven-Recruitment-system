@@ -11,7 +11,7 @@ pool: Devops_Agent
 steps:
 - task: Maven@4
   inputs:
-    mavenPomFile: 'pom.xml'
+    mavenPomFile: 'demo/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'Path'
     jdkArchitectureOption: 'x64'
