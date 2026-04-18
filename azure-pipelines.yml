@@ -1,12 +1,8 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - main
 
-pool: Devops_Agent
+pool:
+  name: Devops_Agent
 
 steps:
 - task: Maven@4
@@ -14,8 +10,7 @@ steps:
     mavenPomFile: 'demo/pom.xml'
     mavenOptions: '-Xmx3072m'
     javaHomeOption: 'Path'
-    jdkArchitectureOption: 'x64'
+    jdkDirectory: 'C:\Program Files\Java\jdk-25.0.2'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'clean install'
-    jdkDirectory: 'C:\Program Files\Java\jdk-25.0.2'
